@@ -38,7 +38,14 @@ function onClick(event) {
     const instance = basicLightbox.create(`
         <img src="${event.target.dataset.source}" width="800" height="600">
         `)
-    instance.show();
+  instance.show();
+  
+  galleryBox.addEventListener("keydown", event => {
+    if (event.code === "Escape") {
+      instance.close();
+    }
+  });
+
 }
 
 
